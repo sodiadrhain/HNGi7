@@ -1,0 +1,166 @@
+body {
+    background-color: #ccc;
+    color: rgb(95, 99, 104);
+    font-family: sans-serif;
+    font-size: 14px;
+    margin: 0.3% 25%;
+    padding: 0px;
+}
+
+main {
+    background-color: rgb(233, 230, 230);
+    padding: 0px 0px 15px 0px;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        background-color: rgb(233, 230, 230);
+        margin: 0px;
+        padding: 0px;
+        font-size: 12px;
+    }
+    
+    main {
+        padding: 0px;
+        border-radius: 0px;
+        padding-bottom: 15px;
+    }
+}
+
+
+header {
+    background-color: #fff;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+
+.menu {
+    font-size: 3em;
+}
+
+.airtime-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 300px) {
+    .airtime-title {
+        font-size: 1em;
+    }
+    nav img {
+        width: 70px;
+    }
+    .menu {
+        font-size: 2em;
+    }
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 5px;
+    border: none;
+    margin: 15px;
+    padding: 10px 15px;
+    font-weight: 550;
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        padding: 5px;
+        margin: 10px;
+    }
+}
+
+button {
+    background-color: #0088c7;
+    transition: all 1s;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 15px 100px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00aeff;
+    opacity: 1;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+input {
+    border: none;
+    padding: 6px 10px;
+}
+
+select {
+    border: none;
+    padding: 6px 10px;
+}
+
+.black {
+    color: #000;
+    padding: 0px;
+    margin: 0px;
+    padding-left: 10px;
+}
+
+.img-flex {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+.sent-text {
+    font-size: 2em;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.sent-ben {
+    font-weight: normal;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1em;
+
+}
+
+.container-sent {
+    background-color: #fff;
+    border-radius: 5px;
+    border: none;
+    margin: 15px;
+    padding: 10px 15px 80px 15px;
+    font-weight: 550;
+}
+
+@media screen and (max-width: 800px) {
+    .container-sent {
+        padding-bottom: 15px;
+    }
+}
+
+.change-bg {
+    border: 2px solid #00aeff;
+    padding: 2px;
+    
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HNGi7 | Airtime Recharge</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <main>
+        <header>
+            <nav>
+                <i class="fa fa-bars menu"></i>
+                <p class="airtime-title">Airtime Recharge</p>
+                <img src="images/hng-logo.png" alt="HNG LOGO" width="100px">
+            </nav>
+        </header>
+        <section class="container">
+            <div>
+                <p>
+                    Account: HNG-TECH 0294672752
+                </p>
+                <p class="black">
+                    # 5000.00
+                </p>
+            </div>
+        </section>
+        <section>
+            <form method="POST">
+                <div class="container">
+                    <p>
+                        Select Mobile Operator
+                    </p>
+                    <div class="img-flex">
+                        <script>
+                            const listImage = [
+                                { link: 'images/airtel.png', name: 'airtel', width: '50px' },
+                                { link: 'images/mtn.png', name: 'mtn', width: '50px' },
+                                { link: 'images/glo.jpg', name: 'glo', width: '50px' },
+                                { link: 'images/9mobile.jpg', name: '9mobile', width: '50px' }
+                            ]
+
+                            listImage.map((num) => {
+                                document.write(`<img src="${num.link}" alt="${num.name}" width="${num.width}" onclick="pNetwork('${num.name}')" id="p-network-${num.name}" class="">`)
+                            })
+                        </script>
+                        <span class="" id="get-network">
+                        </span>
+                    </div>
+                </div>
+                <div class="container">
+                    <label for="">Select Intern</label>
+                    <br>
+                    <select name="" id="p-name">
+                        <script>
+                            const nameList = ['choose intern', 'Seyi Onifade (@xyluz)', 'Adesoji Awobajo (@sodiadrhain)', 'Alade Raji Fariah (@Reehah)', 'Obayuwana Paul (@Pauxiel)']
+                            nameList.map((name) => {
+                                document.write(`<option value="">${name}</option>`)
+                                })
+                        </script>
+                    </select>
+                </div>
+                <div class="container">
+                    <label for="">Mobile Number</label>
+                    <br>
+                    <input type="number" placeholder="e.g: 08090000000" id="p-number" required>
+                </div>
+                <div class="container">
+                    <label for="">Amount</label>
+                    <br>
+                    <input type="number" placeholder="0.00" id="p-amount" required>
+                </div>
+                <div class="flex">
+                    <button type="button" onclick="send()">SEND</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
