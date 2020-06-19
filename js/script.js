@@ -55,7 +55,7 @@ send = () => {
 
     var requestOptions = {
         method: 'POST',
-        headers: { "Access-Control-Allow-Origin": "*", "Content-Type":"application/json; charset=UTF-8"},
+        headers: { "Access-Control-Allow-Origin": "*", "Content-Type": "application/json; charset=UTF-8", "Access-Control-Allow-Origin": "https://sodiadrhain.github.io"},
         body: raw,
         redirect: 'follow'
     };
