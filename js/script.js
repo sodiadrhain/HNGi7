@@ -55,7 +55,7 @@ send = () => {
 
     var requestOptions = {
         method: 'POST',
-        headers: myHeaders,
+        headers: { "Access-Control-Allow-Origin": "*", "Content-Type":"application/json; charset=UTF-8"},
         body: raw,
         redirect: 'follow'
     };
