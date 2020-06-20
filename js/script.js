@@ -66,7 +66,7 @@ send = () => {
 
     fetch("https://sandbox.wallets.africa/bills/airtime/purchase", { method: 'POST', headers: {'Accept': 'application/json', 'Authorization': 'Bearer '+ bearer}, body: JSON.stringify({
         "Code": getNetwork, "Amount": getAmount, "PhoneNumber": getNumber, "SecretKey": "hfucj5jatq8h"
-    }) })
+    }), mode: 'no-cors' })
         .then((res)=>res.json())
         .then((data) => {console.log(data)})
         .catch(err => console.log(err));
