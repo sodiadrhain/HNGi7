@@ -52,17 +52,23 @@ send = () => {
     myHeaders.append("Content-Type", "application/json");
 
     var raw = JSON.stringify({ "Code": getNetwork, "Amount": getAmount, "PhoneNumber": getNumber, "SecretKey": "hfucj5jatq8h" });
-
+    var bearer = 'Bearer '+'uvjqzm5xl6bw'
     var requestOptions = {
         method: 'POST',
-        headers: { "Access-Control-Allow-Origin": "*", "Content-Type": "application/json; charset=UTF-8", "Access-Control-Allow-Origin": "https://sodiadrhain.github.io"},
+        headers: { "Content-Type": "application/json", "Authorization": bearer},
         body: raw,
-        redirect: 'follow'
+        redirect: 'follow',
+        mode: 'no-cors',
+        credentials: 'include',
+        withCredentials: true
     };
 
-    fetch("https://sandbox.wallets.africa/bills/airtime/purchase", requestOptions)
-        .then(data => {data.json()})
-        .then(res => {console.log(res)})
-        .catch(error => console.log('error', error));
+
+    fetch("https://sandbox.wallets.africa/bills/airtime/purchase", { method: 'POST', headers: {'Accept': 'application/json', 'Authorization': 'Bearer '+ bearer}, body: JSON.stringify({
+        "Code": getNetwork, "Amount": getAmount, "PhoneNumber": getNumber, "SecretKey": "hfucj5jatq8h"
+    }) })
+        .then((res)=>res.json())
+        .then((data) => {console.log(data)})
+        .catch(err => console.log(err));
     
 }
