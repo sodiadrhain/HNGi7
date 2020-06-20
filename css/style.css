@@ -164,3 +164,7 @@ select {
     padding: 2px;
     
 }
+
+#not-send {
+    display: none;
+}

@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <main>
+    <main id="sent-show">
         <header>
             <nav>
                 <i class="fa fa-bars menu"></i>
@@ -55,7 +56,7 @@
                     <br>
                     <select name="" id="p-name">
                         <script>
-                            const nameList = ['choose intern', 'Seyi Onifade (@xyluz)', 'Adesoji Awobajo (@sodiadrhain)', 'Alade Raji Fariah (@Reehah)', 'Obayuwana Paul (@Pauxiel)']
+                            const nameList = ['choose intern', 'Seyi Onifade (@xyluz)', 'Adesoji Awobajo (@sodiadrhain)', 'Alade Raji Fariah (@Reehah)', 'Obayuwana Paul (@Pauxiel)', 'Chukwuma Nonso (@nonny)']
                             nameList.map((name) => {
                                 document.write(`<option value="">${name}</option>`)
                                 })
@@ -76,6 +77,52 @@
                     <button type="button" onclick="send()">SEND</button>
                 </div>
             </form>
+        </section>
+    </main>
+    <main id="not-send">
+        <header>
+            <nav>
+                <i class="fa fa-bars menu"></i>
+                <p class="airtime-title">Airtime Recharge</p>
+                <img src="images/hng-logo.png" alt="HNG LOGO" width="100px">
+            </nav>
+        </header>
+        <section class="container-sent">
+            <div class="sent-text">
+                <img src="images/success.png" alt="success">
+                <p>
+                    Airtime Recharge Successful
+                </p>
+            </div>
+            <div>
+                <p class="sent-ben">
+                    <span>
+                        Beneficiary Name:
+                    </span>
+                    <span id="send-name">
+                        @sodiadrhain
+                    </span>
+                </p>
+                <p class="sent-ben">
+                    <span>
+                        Mobile Number:
+                    </span>
+                    <span id="send-number">
+                        08185820902
+                    </span>
+                </p>
+                <p class="sent-ben">
+                    <span>
+                        Amount:
+                    </span>
+                    <span id="send-amount">
+                        1000
+                    </span>
+                </p>
+            </div>
+            <div class="flex">
+                <button type="submit" onclick="location.reload()">OK</button>
+            </div>
         </section>
     </main>
     <footer>

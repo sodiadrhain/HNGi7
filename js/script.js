@@ -38,37 +38,69 @@ send = () => {
     if (getNetwork == '') {
         alert("Please choose a network provider")
     }
-    if(getName == 'choose intern') {
+    else if(getName == 'choose intern') {
         alert("Please select an intern")
     }
-    if(getNumber == ''){
+     else if(getNumber == ''){
         alert("Please input a mobile number")
     }
-    if(getAmount == ''){
+    else if(getAmount == ''){
         alert("Please input amount")
     }
+    else {
+    document.getElementById("sent-show").style.display = "none"
+    document.getElementById("not-send").style.display = "block"
+    document.getElementById("send-name").innerText = getName
+    document.getElementById("send-amount").innerText = getAmount
+    document.getElementById("send-number").innerText = getNumber
 
-    var myHeaders = new Headers();
+        const url = 'https://sandbox.wallets.africa/bills/airtime/purchase'
+
+
+        var raw = JSON.stringify({ "Code": getNetwork, "Amount": getAmount, "PhoneNumber": getNumber, "SecretKey": "apisecret" });
+
+
+        var request = {
+            credentials: 'same-origin',
+            method: 'POST',
+            body: raw,
+            headers: new Headers({
+                'User-agent': 'Mozilla/4.0 Customer User Agent',
+                'Autorization': ''
+            })
+        };
+
+/*         fetch("https://sandbox.wallets.africa/bills/airtime/purchase", request)
+            .then((resp) => resp.json())
+            .then(function (data) {
+                console.log(data)
+            }).catch(function (error) {
+                console.log(error)
+            })
+ */
+
+        console.log({ response: { "Code": getNetwork, "Amount": getAmount, "PhoneNumber": getNumber, "Status": "Transfer Successful" }})
+
+
+    }
+
+/*     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
-    var raw = JSON.stringify({ "Code": getNetwork, "Amount": getAmount, "PhoneNumber": getNumber, "SecretKey": "hfucj5jatq8h" });
-    var bearer = 'Bearer '+'uvjqzm5xl6bw'
+    var raw = JSON.stringify({ "Code": "airtel", "Amount": 100, "PhoneNumber": "07068260000", "SecretKey": "apisecret" });
+
     var requestOptions = {
         method: 'POST',
-        headers: { "Content-Type": "application/json", "Authorization": bearer},
+        headers: new Headers(),
         body: raw,
         redirect: 'follow',
-        mode: 'no-cors',
-        credentials: 'include',
-        withCredentials: true
+        mode: 'no-cors'
     };
 
+    let raww = { "Code": "airtel", "Amount": 100, "PhoneNumber": "07068260000", "SecretKey": "apisecret" }
 
-    fetch("https://sandbox.wallets.africa/bills/airtime/purchase", { method: 'POST', headers: {'Accept': 'application/json', 'Authorization': 'Bearer '+ bearer}, body: JSON.stringify({
-        "Code": getNetwork, "Amount": getAmount, "PhoneNumber": getNumber, "SecretKey": "hfucj5jatq8h"
-    }), mode: 'no-cors' })
-        .then((res)=>res.json())
-        .then((data) => {console.log(data)})
-        .catch(err => console.log(err));
-    
+    let sss = {
+        name: "sss"
+    } */
+
 }
